@@ -2,6 +2,6 @@ asyncio
 dnspython
 motor
 psutil
-pyrogram==1.4.16
+pyrogram
 python-dotenv
 tgcrypto
