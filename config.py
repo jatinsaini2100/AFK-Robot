@@ -1,16 +1,11 @@
 from os import getenv
-from dotenv import load_dotenv
-load_dotenv()
-
-from os import getenv
 
 # Retrieve API_ID environment variable
 api_id = getenv("API_ID", 29250051)
 
-# Check if API_ID is set to the placeholder value
-if api_id == '# get this value from my.telegram.org':
-    print("ERROR: Please replace the placeholder value '# get this value from my.telegram.org' "
-          "in the API_ID environment variable with your actual API ID obtained from my.telegram.org.")
+# Check if API_ID is None or empty
+if not api_id:
+    print("ERROR: API_ID environment variable is not set.")
     exit(1)
 
 # Convert API_ID to integer
