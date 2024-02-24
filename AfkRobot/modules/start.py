@@ -36,7 +36,7 @@ async def on_start(_, message: Message):
     await put_cleanmode(message.chat.id, send.message_id)
     
 
-@app.on_message(filters.command(["help"]) & filters.group & ~filters.edited)
+@app.on_message(filters.command(["help"]) & filters.group)
 async def on_help(_, message: Message):
     upl = InlineKeyboardMarkup(
         [
