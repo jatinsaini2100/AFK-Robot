@@ -13,7 +13,7 @@ from AfkRobot.database.cleanmode import cleanmode_off, cleanmode_on, is_cleanmod
 from AfkRobot.helpers import get_readable_time, put_cleanmode, settings_markup, RANDOM, HELP_TEXT
 
 
-@app.on_message(filters.command(["start", "settings"]) & filters.group & ~filters.edited)
+@app.on_message(filters.command(["start", "settings"]) & filters.group)
 async def on_start(_, message: Message):
     bot_uptime = int(time.time() - boot)
     Uptime = get_readable_time(bot_uptime)
