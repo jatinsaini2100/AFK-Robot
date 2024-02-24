@@ -173,7 +173,8 @@ async def active_afk(_, message: Message):
         }
 
     await add_afk(user_id, details)
-    send = await message.reply_text(
-        f"{message.from_user.first_name} is now afk!"
-    )
-    await put_cleanmode(message.chat.id, send.message_id)
+send = await message.reply_text(
+    f"{message.from_user.first_name} is now afk!"
+)
+# Wait for the message indicating the user is AFK to be sent before putting it into clean mode
+await put_cleanmode(message.chat.id, send.message_id)
