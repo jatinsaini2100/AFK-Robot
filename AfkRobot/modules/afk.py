@@ -172,7 +172,8 @@ async def active_afk(_, message: Message):
             "reason": None,
         }
 
-     await add_afk(user_id, details)
+     async def active_afk(_, message: Message):
+    await add_afk(user_id, details)
     send = await message.reply_text(
         f"{message.from_user.first_name} is now afk!"
     )
