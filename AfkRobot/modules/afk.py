@@ -178,6 +178,5 @@ async def active_afk(_, message: Message):
     send = await message.reply_text(
         f"{message.from_user.first_name} is now afk!"
     )
-    # More of your code here
-print(type(send))  # This will print the type of send
-await put_cleanmode(message.chat.id, send.message_id)
+    print(type(send))  # This will print the type of send
+    await put_cleanmode(message.chat.id, send.message_id)
